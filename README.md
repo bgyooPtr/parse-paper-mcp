@@ -31,20 +31,9 @@ Restart Claude Code to load the server.
 
 ### Local Development
 
+- Claude Code
 ```bash
-git clone https://github.com/bgyooPtr/parse-paper-mcp
-cd parse-paper-mcp
-uv sync
-
-# Add to .mcp.json:
-{
-  "mcpServers": {
-    "parse-paper-mcp": {
-      "command": "uv",
-      "args": ["--directory", "/absolute/path/to/parse-paper-mcp", "run", "parse-paper-mcp"]
-    }
-  }
-}
+claude mcp add parse-paper-mcp -s project -- uvx  --from git+https://github.com/bgyooPtr/parse-paper-mcp parse-paper-mcp
 ```
 
 ## Available Tools
