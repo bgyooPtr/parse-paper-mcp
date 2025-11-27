@@ -1,0 +1,39 @@
+[project]
+name = "parse-paper-mcp"
+version = "0.1.0"
+description = "MCP server for parsing large academic papers (PDF) with text and image extraction"
+readme = "README.md"
+authors = [
+    { name = "parse-paper-mcp" }
+]
+keywords = ["mcp", "pdf", "paper", "parsing", "llm"]
+requires-python = ">=3.10"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "pymupdf4llm>=0.0.5",
+    "pymupdf>=1.23.0",
+    "Pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+parse-paper-mcp = "parse_paper_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
